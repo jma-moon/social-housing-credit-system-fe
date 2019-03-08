@@ -1,0 +1,29 @@
+<div>
+  <form [formGroup]="creditRequestForm" (ngSubmit)="submitForm()">
+    <div formGroupName="person">
+      <div>
+        <label>Name</label>
+        <input formControlName="name" type="text">
+      </div>
+      <div>
+        <label>Age</label>
+        <input formControlName="age" type="text">
+      </div>
+      <div>
+        <label>Affordable payment per month</label>
+        <input formControlName="affordablePaymentPerMonth" type="text">
+      </div>
+    </div>
+    <div formGroupName="property">
+      <div>
+        <label>Location</label>
+        <input formControlName="location" type="text">
+      </div>
+      <div>
+        <label>Price</label>
+        <input formControlName="price" type="text">
+      </div>
+    </div>
+    <button type="submit" [disabled]="creditRequestForm.invalid">Submit</button>
+  </form>
+</div>
