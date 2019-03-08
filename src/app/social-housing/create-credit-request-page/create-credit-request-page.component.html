@@ -1,1 +1,4 @@
-<app-create-credit-request-form (creditRequestChange)="sendCreditRequest($event)"></app-create-credit-request-form>
+<div class="container">
+    <app-create-credit-request-form (creditRequestChange)="sendCreditRequest($event)"></app-create-credit-request-form>
+    <app-credit-request-view [creditRequest]="creditRequest"></app-credit-request-view>
+</div>

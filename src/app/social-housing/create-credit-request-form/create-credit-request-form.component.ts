@@ -20,33 +20,39 @@ export class CreateCreditRequestFormComponent implements OnInit {
     this.creditRequestForm = this.createForm();
   }
 
-  createForm(): FormGroup {
+  private createForm(): FormGroup {
     return this.creditRequestForm = this.formBuilder.group({
       person: this.formBuilder.group({
         name: ['', [Validators.required]],
-        age: ['', [Validators.required]],
-        affordablePaymentPerMonth: ['', [Validators.required]],
+      age: ['', [Validators.required, Validators.pattern(/^[0-9]*$/)]],
+        affordablePaymentPerMonth: ['', [Validators.required, Validators.pattern(/^[0-9]*$/)]],
       }),
       property: this.formBuilder.group({
         location: ['', [Validators.required]],
-        price: ['', [Validators.required]],
+        price: ['', [Validators.required, Validators.pattern(/^[0-9]*$/)]],
       }),
     });
   }
 
   submitForm() {
-    const creditRequest: CreditRequest = {
+
+    const creditRequest: CreditRequest = this.createCreditRequest(this.creditRequestForm);
+
+    this.creditRequestChange.emit(creditRequest);
+  }
+
+  private createCreditRequest(formGroup: FormGroup): CreditRequest {
+    return  {
       person: {
-        name: this.creditRequestForm.get('person.name').value,
-        age: this.creditRequestForm.get('person.age').value,
-        affordablePaymentPerMonth: this.creditRequestForm.get('person.affordablePaymentPerMonth').value,
+        name: formGroup.get('person.name').value,
+        age: formGroup.get('person.age').value,
+        affordablePaymentPerMonth: formGroup.get('person.affordablePaymentPerMonth').value,
       },
       property: {
-        location: this.creditRequestForm.get('property.location').value,
-        price: this.creditRequestForm.get('property.price').value,
+        location: formGroup.get('property.location').value,
+        price: formGroup.get('property.price').value,
       }
     };
-    this.creditRequestChange.emit(creditRequest);
   }
 
 }

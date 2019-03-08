@@ -10,15 +10,19 @@ import { take } from 'rxjs/operators';
 })
 export class CreateCreditRequestPageComponent implements OnInit {
 
+  creditRequest: CreditRequest;
+
   constructor(private socialHousingApiService: SocialHousingApiService) { }
 
   ngOnInit() {
   }
 
   public sendCreditRequest(creditRequest: CreditRequest): void {
-    this.socialHousingApiService.calculate(creditRequest).pipe(take(1)).subscribe((data) => {
-      console.log(data);
-    });
+    this.socialHousingApiService.calculate(creditRequest)
+      .pipe(take(1))
+      .subscribe((data) => {
+        this.creditRequest = data;
+      });
   }
 
 }

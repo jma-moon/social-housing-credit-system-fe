@@ -1,0 +1,38 @@
+<div *ngIf="creditRequest">
+  <ng-container *ngIf="creditRequest.person">
+    <h3>Person</h3>
+    <p>
+      <strong>Name: </strong>
+      <span>{{creditRequest.person.name}}</span>
+    </p>
+    <p>
+      <strong>Age: </strong>
+      <span>{{creditRequest.person.age}}</span>
+    </p>
+    <p>
+      <strong>Affordable payment per month: </strong>
+      <span>{{creditRequest.person.affordablePaymentPerMonth}}</span>
+    </p>
+  </ng-container>
+  <ng-container *ngIf="creditRequest.property">
+    <h3>Property</h3>
+    <p>
+      <strong>Location: </strong>
+      <span>{{creditRequest.property.location}}</span>
+    </p>
+    <p>
+      <strong>Price: </strong>
+      <span>{{creditRequest.property.price}}</span>
+    </p>
+  </ng-container>
+  <h3>Status</h3>
+  <p>
+    <strong>Accepted: </strong>
+    <span>{{creditRequest.accepted ? 'Request is accepted' : 'Request has some issues'}}</span>
+  </p>
+  <ng-container *ngIf="creditRequest.issues && creditRequest.issues.length > 0">
+      <p *ngFor="let issue of creditRequest.issues">
+        <span>{{issue}}</span>
+      </p>
+    </ng-container>
+</div>

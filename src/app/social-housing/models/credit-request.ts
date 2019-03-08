@@ -4,4 +4,6 @@ import { Property } from './property';
 export class CreditRequest {
     person: Person;
     property: Property;
+    accepted?: boolean;
+    issues?: string[];
 }

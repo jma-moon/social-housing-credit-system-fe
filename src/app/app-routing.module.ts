@@ -8,11 +8,11 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'social-housing',
+        redirectTo: 'social-housing-credit',
         pathMatch: 'full',
       },
       {
-        path: 'social-housing',
+        path: 'social-housing-credit',
         loadChildren: './social-housing/social-housing.module#SocialHousingModule',
       },
       {
