@@ -1,5 +1,5 @@
 export class Person {
-    name: string;
+    fullName: string;
     age: number;
-    affordablePaymentPerMonth: number;
+    amountPerMonth: number;
 }

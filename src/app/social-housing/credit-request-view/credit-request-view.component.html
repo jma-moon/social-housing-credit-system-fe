@@ -32,7 +32,7 @@
   </p>
   <ng-container *ngIf="creditRequest.issues && creditRequest.issues.length > 0">
       <p *ngFor="let issue of creditRequest.issues">
-        <span>{{issue}}</span>
+        <span>{{issue.code}}</span>
       </p>
     </ng-container>
 </div>

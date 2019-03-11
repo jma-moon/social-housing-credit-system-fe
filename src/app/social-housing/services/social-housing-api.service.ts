@@ -14,7 +14,7 @@ export class SocialHousingApiService {
   constructor(private restApiService: RestApiService) { }
 
   public calculate(creditRequest: CreditRequest): Observable<CreditRequest> {
-    return this.restApiService.postRequest(`${this.url}housing-credit`, creditRequest);
+    return this.restApiService.postRequest(`${this.url}credit-request`, creditRequest);
   }
 
 }

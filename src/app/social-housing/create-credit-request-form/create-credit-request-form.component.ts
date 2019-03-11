@@ -44,9 +44,9 @@ export class CreateCreditRequestFormComponent implements OnInit {
   private createCreditRequest(formGroup: FormGroup): CreditRequest {
     return  {
       person: {
-        name: formGroup.get('person.name').value,
+        fullName: formGroup.get('person.name').value,
         age: formGroup.get('person.age').value,
-        affordablePaymentPerMonth: formGroup.get('person.affordablePaymentPerMonth').value,
+        amountPerMonth: formGroup.get('person.affordablePaymentPerMonth').value,
       },
       property: {
         location: formGroup.get('property.location').value,
