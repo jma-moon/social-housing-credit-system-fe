@@ -16,6 +16,10 @@ const routes: Routes = [
         loadChildren: './social-housing/social-housing.module#SocialHousingModule',
       },
       {
+        path: 'engine-parameters',
+        loadChildren: './engine-parameters/engine-parameters.module#EngineParametersModule',
+      },
+      {
         path: '**',
         component: NotFoundComponent,
       },

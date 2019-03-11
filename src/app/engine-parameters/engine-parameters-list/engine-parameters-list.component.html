@@ -1,0 +1,33 @@
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let engineParameter of engineParameters">
+
+      <ng-container *ngIf="!editRows[engineParameter.id]; else editRow">
+        <td>{{engineParameter.name}}</td>
+        <td>{{engineParameter.value}}</td>
+        <td>
+          <button (click)="addEditRow(engineParameter)" class="btn btn-success btn-sm">Edit</button>
+        </td>
+      </ng-container>
+
+      <ng-template #editRow>
+        <td>{{engineParameter.name}}</td>
+        <td>
+          <input class="form-control" type="text" [(ngModel)]="editRows[engineParameter.id]">
+        </td>
+        <td>
+          <button (click)="updateEngineParameter(engineParameter.id, editRows[engineParameter.id])" class="btn btn-primary btn-sm mx-2">Save</button>
+          <button (click)="removeEditRow(engineParameter.id)" class="btn btn-danger btn-sm">Cancel</button>
+        </td>
+      </ng-template>
+
+    </tr>
+  </tbody>
+</table>

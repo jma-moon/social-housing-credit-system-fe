@@ -2,8 +2,8 @@
   <ng-container *ngIf="creditRequest.person">
     <h3>Person</h3>
     <p>
-      <strong>Name: </strong>
-      <span>{{creditRequest.person.name}}</span>
+      <strong>Full name: </strong>
+      <span>{{creditRequest.person.fullName}}</span>
     </p>
     <p>
       <strong>Age: </strong>
@@ -11,7 +11,7 @@
     </p>
     <p>
       <strong>Affordable payment per month: </strong>
-      <span>{{creditRequest.person.affordablePaymentPerMonth}}</span>
+      <span>{{creditRequest.person.amountPerMonth}}</span>
     </p>
   </ng-container>
   <ng-container *ngIf="creditRequest.property">

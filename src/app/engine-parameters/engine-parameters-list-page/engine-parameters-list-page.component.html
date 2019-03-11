@@ -1,0 +1,6 @@
+<div class="container">
+  <app-engine-parameters-list
+    [engineParameters]="engineParameters$ | async"
+    (updateEngineParameterChange)="updateEngineParameter($event)">
+  </app-engine-parameters-list>
+</div>
