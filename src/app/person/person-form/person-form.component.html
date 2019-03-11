@@ -1,0 +1,16 @@
+<h2>Person information</h2>
+<form [formGroup]="personForm" (ngSubmit)="submitPerson()">
+  <div class="form-group">
+    <label>Full name</label>
+    <input formControlName="fullName" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Age</label>
+    <input formControlName="age" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Amount per month</label>
+    <input formControlName="amountPerMonth" type="text" class="form-control">
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="personForm.invalid">Submit</button>
+</form>

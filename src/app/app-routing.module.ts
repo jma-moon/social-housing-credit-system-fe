@@ -20,6 +20,10 @@ const routes: Routes = [
         loadChildren: './engine-parameters/engine-parameters.module#EngineParametersModule',
       },
       {
+        path: 'person',
+        loadChildren: './person/person.module#PersonModule',
+      },
+      {
         path: '**',
         component: NotFoundComponent,
       },
