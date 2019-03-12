@@ -23,6 +23,10 @@ export class AuthDataService {
     this._person.next(person);
   }
 
+  public get person(): Person {
+    return this._person.getValue();
+  }
+
   public get person$(): Observable<Person> {
     return this._person.asObservable();
   }

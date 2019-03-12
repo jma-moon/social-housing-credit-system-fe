@@ -2,6 +2,7 @@ import { Component, OnInit, EventEmitter } from '@angular/core';
 import { CreditRequest } from '../models/credit-request';
 import { Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthDataService } from '../../auth/services/auth-data.service';
 
 @Component({
   selector: 'app-create-credit-request-form',
@@ -14,7 +15,7 @@ export class CreateCreditRequestFormComponent implements OnInit {
 
   creditRequestForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private authDataService: AuthDataService) { }
 
   ngOnInit() {
     this.creditRequestForm = this.createForm();
@@ -22,11 +23,6 @@ export class CreateCreditRequestFormComponent implements OnInit {
 
   private createForm(): FormGroup {
     return this.creditRequestForm = this.formBuilder.group({
-      person: this.formBuilder.group({
-        name: ['', [Validators.required]],
-      age: ['', [Validators.required, Validators.pattern(/^[0-9]*$/)]],
-        affordablePaymentPerMonth: ['', [Validators.required, Validators.pattern(/^[0-9]*$/)]],
-      }),
       property: this.formBuilder.group({
         location: ['', [Validators.required]],
         price: ['', [Validators.required, Validators.pattern(/^[0-9]*$/)]],
@@ -42,18 +38,13 @@ export class CreateCreditRequestFormComponent implements OnInit {
   }
 
   private createCreditRequest(formGroup: FormGroup): CreditRequest {
-    // return  {
-    //   person: {
-    //     fullName: formGroup.get('person.name').value,
-    //     age: formGroup.get('person.age').value,
-    //     amountPerMonth: formGroup.get('person.affordablePaymentPerMonth').value,
-    //   },
-    //   property: {
-    //     location: formGroup.get('property.location').value,
-    //     price: formGroup.get('property.price').value,
-    //   }
-    // };
-    return null;
+    return  {
+      person: this.authDataService.person,
+      property: {
+        location: formGroup.get('property.location').value,
+        price: formGroup.get('property.price').value,
+      }
+    };
   }
 
 }
