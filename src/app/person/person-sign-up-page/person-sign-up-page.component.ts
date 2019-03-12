@@ -3,6 +3,7 @@ import { PersonApiService } from '../services/person-api.service';
 import { Person } from '../models/person';
 import { take } from 'rxjs/operators';
 import { PersonDataService } from '../services/person-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-person-sign-up-page',
@@ -11,13 +12,17 @@ import { PersonDataService } from '../services/person-data.service';
 })
 export class PersonSignUpPageComponent implements OnInit {
 
-  constructor(private personDataService: PersonDataService) { }
+  constructor(
+    private personDataService: PersonDataService,
+    private router: Router,
+  ) { }
 
   ngOnInit() {
   }
 
   savePerson(person: Person): void {
     this.personDataService.savePerson(person);
+    this.router.navigate(['/', 'auth', 'sign-in']);
   }
 
 }

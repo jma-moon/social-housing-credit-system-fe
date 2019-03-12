@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PersonDataService } from '../person/services/person-data.service';
 import { Observable } from 'rxjs';
 import { Person } from '../person/models/person';
+import { AuthDataService } from '../auth/services/auth-data.service';
 
 @Component({
   selector: 'app-navigation-menu-page',
@@ -12,14 +13,14 @@ export class NavigationMenuPageComponent implements OnInit {
 
   person$: Observable<Person>;
 
-  constructor(private personDataService: PersonDataService) { }
+  constructor(private authDataService: AuthDataService) { }
 
   ngOnInit() {
-    this.person$ = this.personDataService.person$;
+    this.person$ = this.authDataService.person$;
   }
 
   public logout(person: Person) {
-    this.personDataService.resetPerson();
+    this.authDataService.signOut();
   }
 
 }

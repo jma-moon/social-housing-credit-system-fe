@@ -26,9 +26,7 @@ export class PersonDataService {
   }
 
   savePerson(person: Person): void {
-    this.personApiService.save(person).pipe(take(1)).subscribe(
-      person => this.setPerson(person)
-    );
+    this.personApiService.save(person).pipe(take(1)).subscribe();
   }
 
 }

@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SocialHousingComponent } from './social-housing.component';
+import { CreditRequestComponent } from './credit-request.component';
 import { CreateCreditRequestPageComponent } from './create-credit-request-page/create-credit-request-page.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: SocialHousingComponent,
+    component: CreditRequestComponent,
     children: [
       {
         path: '',
@@ -20,4 +20,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class SocialHousingRoutingModule { }
+export class CreditRequestRoutingModule { }

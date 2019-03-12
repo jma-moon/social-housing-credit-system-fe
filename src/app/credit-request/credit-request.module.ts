@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { SocialHousingRoutingModule } from './social-housing-routing.module';
-import { SocialHousingComponent } from './social-housing.component';
+import { CreditRequestRoutingModule } from './credit-request-routing.module';
+import { CreditRequestComponent } from './credit-request.component';
 import { CreateCreditRequestPageComponent } from './create-credit-request-page/create-credit-request-page.component';
 import { CreateCreditRequestFormComponent } from './create-credit-request-form/create-credit-request-form.component';
 import { SharedModule } from '../shared/shared.module';
@@ -10,15 +10,15 @@ import { CreditRequestViewComponent } from './credit-request-view/credit-request
 
 @NgModule({
   declarations: [
-    SocialHousingComponent,
+    CreditRequestComponent,
     CreateCreditRequestPageComponent,
     CreateCreditRequestFormComponent,
     CreditRequestViewComponent,
   ],
   imports: [
     CommonModule,
-    SocialHousingRoutingModule,
+    CreditRequestRoutingModule,
     SharedModule,
   ]
 })
-export class SocialHousingModule { }
+export class CreditRequestModule { }

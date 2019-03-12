@@ -8,11 +8,15 @@ import { PersonFormComponent } from './person-form/person-form.component';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  declarations: [PersonComponent, PersonSignUpPageComponent, PersonFormComponent],
+  declarations: [
+    PersonComponent,
+    PersonSignUpPageComponent,
+    PersonFormComponent,
+  ],
   imports: [
     CommonModule,
     PersonRoutingModule,
     SharedModule,
-  ]
+  ],
 })
 export class PersonModule { }

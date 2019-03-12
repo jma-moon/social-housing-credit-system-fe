@@ -19,6 +19,8 @@ export class PersonFormComponent implements OnInit {
       fullName: ['', [Validators.required]],
       age: ['', [Validators.required, Validators.pattern(/^[0-9]*$/)]],
       amountPerMonth: ['', [Validators.required, Validators.pattern(/^[0-9]*$/)]],
+      personalId: ['', [Validators.required]],
+      password: ['', [Validators.required]],
     });
   }
 
@@ -35,6 +37,8 @@ export class PersonFormComponent implements OnInit {
       fullName: personForm.get('fullName').value,
       age: personForm.get('age').value,
       amountPerMonth: personForm.get('amountPerMonth').value,
+      personalId: personForm.get('personalId').value,
+      password: personForm.get('password').value,
     };
   }
 

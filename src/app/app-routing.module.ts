@@ -8,12 +8,16 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'social-housing-credit',
+        redirectTo: 'auth',
         pathMatch: 'full',
       },
       {
-        path: 'social-housing-credit',
-        loadChildren: './social-housing/social-housing.module#SocialHousingModule',
+        path: 'auth',
+        loadChildren: './auth/auth.module#AuthModule',
+      },
+      {
+        path: 'credit-request',
+        loadChildren: './credit-request/credit-request.module#CreditRequestModule',
       },
       {
         path: 'engine-parameters',
