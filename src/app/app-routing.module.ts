@@ -28,6 +28,10 @@ const routes: Routes = [
         loadChildren: './person/person.module#PersonModule',
       },
       {
+        path: 'properties',
+        loadChildren: './property/property.module#PropertyModule',
+      },
+      {
         path: '**',
         component: NotFoundComponent,
       },

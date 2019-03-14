@@ -1,0 +1,12 @@
+<h2>Property</h2>
+<form [formGroup]="propertyForm" (ngSubmit)="submitForm()">
+  <div class="form-group">
+    <label>Location</label>
+    <input class="form-control" formControlName="location" type="text">
+  </div>
+  <div class="form-group">
+    <label>Price</label>
+    <input class="form-control" formControlName="price" type="text">
+  </div>
+  <button class="btn btn-primary" type="submit" [disabled]="propertyForm.invalid">Submit</button>
+</form>

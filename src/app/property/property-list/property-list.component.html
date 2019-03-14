@@ -1,0 +1,14 @@
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Location</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let property of properties">
+      <td>{{property.location}}</td>
+      <td>{{property.price}}</td>
+    </tr>
+  </tbody>
+</table>

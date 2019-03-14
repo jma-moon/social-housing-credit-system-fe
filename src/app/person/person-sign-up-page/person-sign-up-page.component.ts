@@ -22,7 +22,6 @@ export class PersonSignUpPageComponent implements OnInit {
 
   savePerson(person: Person): void {
     this.personDataService.savePerson(person);
-    this.router.navigate(['/', 'auth', 'sign-in']);
   }
 
 }
